@@ -11,6 +11,9 @@ import About from './Pages/About/About';
 import Services from './Pages/Services/Services';
 import Dentist from './Pages/Dentist/Dentist';
 import Contract from './Pages/Contract/Contract';
+import Login from './Components/Login/Login';
+import Registration from './Components/Registration/Registration';
+import AuthProvider from './AuthProvider/AuthProvider';
 
 const router = createBrowserRouter([
   {
@@ -20,6 +23,14 @@ const router = createBrowserRouter([
      {
       path : "/",
       element : <Home></Home>
+     },
+     {
+      path : "/login",
+      element : <Login></Login>
+     },
+     {
+      path : "/reg",
+      element : <Registration></Registration>
      },
      {
       path : "/about",
@@ -43,6 +54,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-     <RouterProvider router={router} />
+    <AuthProvider>
+    <RouterProvider router={router} />
+    </AuthProvider>
+     
   </React.StrictMode>,
 )

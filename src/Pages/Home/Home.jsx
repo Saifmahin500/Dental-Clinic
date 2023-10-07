@@ -1,5 +1,6 @@
 import Banner from "../../Components/Banner/Banner";
-import Navbar from "../../Components/Navbar/Navbar";
+import ServicesCards from "../../Components/ServicesCards/ServicesCards";
+
 
 
 
@@ -8,9 +9,10 @@ import Navbar from "../../Components/Navbar/Navbar";
 const Home = () => {
     return (
         <div>
-            <div className='bg-yellow-100'>
-            <Navbar></Navbar>
+            
             <Banner></Banner>
+            <div className="max-w-6xl mx-auto">
+            <ServicesCards></ServicesCards>
             </div>
                      
             

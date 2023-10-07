@@ -1,0 +1,44 @@
+[
+    {
+        "id": "1",
+        "title": "Complete Dentistry",
+        "description": "Lorem Ipsum is simply is very dummy text of the printings and type and setting for content",
+        "link": "Read More",
+        "img": "https://i.ibb.co/Hgmt6nd/flat-dental-care-concept-illustration-23-2148982241.jpg"
+    },
+    {
+        "id": "2",
+        "title": "Dental Selants",
+        "description": "Get our text demo is simply dummy text of the printings and type and setting for content",
+        "link": "Read More",
+        "img": "https://i.ibb.co/1Mg1F9y/professional-dentist-man-woman-with-patient-24877-55082.jpg"
+    },
+    {
+        "id": "3",
+        "title": "Dental Dictionary",
+        "description": "Lorem Ipsum is simply is very dummy text of the printings and type setting for content",
+        "link": "Read More",
+        "img": "https://i.ibb.co/mXFQMFf/patient-taking-medical-examination-clinic-52683-57178.jpg"
+    },
+    {
+        "id": "4",
+        "title": "Dental Implants",
+        "description": "Lorem Ipsum is simply is very dummy text of the printings and type and setting for content",
+        "link": "Read More",
+        "img": "https://i.ibb.co/pdH1qHP/dentist-holding-instruments-examining-teeth-decay-clinic-1308-98405.jpg"
+    },
+    {
+        "id": "5",
+        "title": "Oral Surgery",
+        "description": "Get our text demo is simply dummy text of the printings and type and setting for content",
+        "link": "Read More",
+        "img": "https://i.ibb.co/C8LtrKh/cartoon-style-dental-care-concept-23-2148984413.jpg"
+    },
+    {
+        "id": "6",
+        "title": "General Dentistry",
+        "description": "Lorem Ipsum is simply is very dummy text of the printings and type setting for content",
+        "link": "Read More",
+        "img": "https://i.ibb.co/xJ63CsP/dentist-holding-instruments-examining-teeth-blue-backgrou-1308-92367.jpg"
+    }
+]

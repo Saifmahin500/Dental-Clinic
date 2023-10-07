@@ -2,7 +2,7 @@
 
 const Banner = () => {
     return (
-        <div>
+        <div className='bg-yellow-100'>
             <div className="hero min-h-screen">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <img src="https://i.ibb.co/9vQWTNq/hero-main-bg.png" className="max-w-sm rounded-lg shadow-2xl" />

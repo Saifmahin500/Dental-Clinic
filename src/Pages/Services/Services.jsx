@@ -1,11 +1,11 @@
+import ServicesCards from "../../Components/ServicesCards/ServicesCards";
 
 
 
 const Services = () => {
     return (
         <div>
-            
-            <h3>this is Services</h3>
+            <ServicesCards></ServicesCards>
         </div>
     );
 };

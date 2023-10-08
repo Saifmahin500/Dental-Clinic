@@ -14,6 +14,8 @@ import Contract from './Pages/Contract/Contract';
 import Login from './Components/Login/Login';
 import Registration from './Components/Registration/Registration';
 import AuthProvider from './AuthProvider/AuthProvider';
+import ServicesDetails from './Components/ServicesCards/ServicesDetails';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,11 @@ const router = createBrowserRouter([
      {
       path : "/services",
       element : <Services></Services>
+     },
+     {
+      path : "/card/:id",
+      element : <PrivateRoute><ServicesDetails></ServicesDetails></PrivateRoute>,
+      loader : () => fetch('../Services.json')
      },
      {
       path : "/dentist",

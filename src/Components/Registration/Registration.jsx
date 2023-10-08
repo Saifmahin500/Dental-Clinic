@@ -1,8 +1,11 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 
 const Registration = () => {
-
+const {createUser} = useContext(AuthContext)
+const [error, setError] = useState("")
     const handleRegistration = e =>{
         e.preventDefault();
         const username = e.target.userName.value;
@@ -10,7 +13,22 @@ const Registration = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(username,photo, email,password);
-    }
+
+        if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
+            setError("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:")
+        }
+        else {
+            setError("")
+        }
+
+        createUser(email,password)
+    .then(result =>{
+      console.log(result);
+    })
+    .catch(err =>{
+      console.error(err);
+    })
+    } 
     return (
         <div>
             <div className="flex justify-center my-10">
@@ -18,6 +36,7 @@ const Registration = () => {
                     <div className="hero-content flex-col ">
                         <div className="text-center">
                             <h1 className="text-5xl font-bold">Registration now!</h1>
+                            <p>{error}</p>
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <div className="card-body">

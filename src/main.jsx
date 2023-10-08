@@ -9,13 +9,13 @@ import Root from './Components/Root/Root';
 import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Services from './Pages/Services/Services';
-import Dentist from './Pages/Dentist/Dentist';
 import Contract from './Pages/Contract/Contract';
 import Login from './Components/Login/Login';
 import Registration from './Components/Registration/Registration';
 import AuthProvider from './AuthProvider/AuthProvider';
 import ServicesDetails from './Components/ServicesCards/ServicesDetails';
 import PrivateRoute from './PrivateRoute/PrivateRoute';
+import Appointment from './Pages/Appointment/Appointment';
 
 const router = createBrowserRouter([
   {
@@ -48,8 +48,8 @@ const router = createBrowserRouter([
       loader : () => fetch('../Services.json')
      },
      {
-      path : "/dentist",
-      element : <Dentist></Dentist>
+      path : "/Appointment",
+      element : <PrivateRoute><Appointment></Appointment></PrivateRoute>
      },
      {
       path : "/contract",

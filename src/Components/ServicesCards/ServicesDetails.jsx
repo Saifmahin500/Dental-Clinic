@@ -31,6 +31,7 @@ const ServicesDetails = () => {
 
                         The practice has been established for over 60 years and has been at the forefront of modern dentistry. Prevention is a cornerstone of the practice philosophy and subsequently we work in conjunction with our hygienists to help our patients achieve this.
                     </p>
+                    <p className="font-medium text-xl">Our Service Price : {service.price}</p>
                     <a className="inline-block" href="#">
                        <Link to="/">
                        <button

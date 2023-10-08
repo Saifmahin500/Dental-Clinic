@@ -1,12 +1,36 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { FaGoogle } from "react-icons/fa";
 
 const Login = () => {
-
-    const handleLogin = e =>{
+    const { googleSignIn ,signIn } = useContext(AuthContext);
+    const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        console.log(email,password);
+        console.log(email, password);
+
+            if (email,password) {
+                signIn(email,password)
+            .then(result => {
+                result.user
+            })
+            .catch(err =>{
+                alert(err.massage);
+              })
+            }
+        
+        
+    }
+    const handleGoogle = () => {
+        googleSignIn()
+            .then(result => {
+                result.user
+            })
+            .catch(err => {
+                console.error(err);
+            })
     }
     return (
         <div>
@@ -35,6 +59,8 @@ const Login = () => {
                                 </div>
                                 <div className="form-control mt-6">
                                     <button className="btn btn-error">Login</button>
+                                    <p className="text-center">Or</p>
+                                        <button  onClick={handleGoogle} className="btn btn-neutral"><FaGoogle></FaGoogle>Login With Google</button>
                                     <p className="mt-4 block text-center font-sans text-base font-normal leading-relaxed text-gray-700 antialiased">
                                         Dont’t Have An Account ?
                                         <Link to="/reg">
@@ -50,8 +76,10 @@ const Login = () => {
                             </form>
                         </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
     );
 };

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { FaHome, FaPersonBooth, FaPhone, FaServicestack, FaTooth } from "react-icons/fa";
+import { FaHome, FaPersonBooth, FaServicestack, FaTooth, FaAtlassian, FaArrowAltCircleRight } from "react-icons/fa";
 import { NavLink, } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
@@ -21,24 +21,24 @@ const Navbar = () => {
                         </label>
 
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52 font-bold text-white text-xl">
-                            <NavLink to="/"className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-black" : ""
-                        }><li><a>Home</a></li></NavLink>
-                            <NavLink to="/about"className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-black" : ""
-                        }><li><a>About</a></li></NavLink>
-                            <NavLink to="/services"className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-black" : ""
-                        }><li><a>Services</a></li></NavLink>
-                            <NavLink to="/dentist"className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-black" : ""
-                        }><li><a>Dentist</a></li></NavLink>
-                            <NavLink to="/contract"className={({ isActive, isPending }) =>
-                            isPending ? "pending" : isActive ? "text-black" : ""
-                        }><li><a>Contract</a></li></NavLink>
+                            <NavLink to="/" className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-black" : ""
+                            }><li><a>Home</a></li></NavLink>
+                            <NavLink to="/about" className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-black" : ""
+                            }><li><a>About</a></li></NavLink>
+                            <NavLink to="/services" className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-black" : ""
+                            }><li><a>Services</a></li></NavLink>
+                            <NavLink to="/dentist" className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-black" : ""
+                            }><li><a>Dentist</a></li></NavLink>
+                            <NavLink to="/contract" className={({ isActive, isPending }) =>
+                                isPending ? "pending" : isActive ? "text-black" : ""
+                            }><li><a>Contract</a></li></NavLink>
                         </ul>
                     </div>
-                    <a className="btn btn-ghost normal-case text-2xl text-white"><FaTooth></FaTooth>Dental Clinic</a>
+                    <NavLink to="/"><a className="btn btn-ghost normal-case text-2xl text-white"><FaTooth></FaTooth>Dental Clinic</a></NavLink>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg font-bold text-white">
@@ -48,34 +48,52 @@ const Navbar = () => {
                         <NavLink to="/about" className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-black" : ""
                         }><li><a><FaPersonBooth></FaPersonBooth>About</a></li></NavLink>
-                        <NavLink to="/services"className={({ isActive, isPending }) =>
+                        <NavLink to="/services" className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-black" : ""
                         }><li><a><FaServicestack></FaServicestack>Services</a></li></NavLink>
-                        <NavLink to="/Appointment"className={({ isActive, isPending }) =>
+                        <NavLink to="/Appointment" className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-black" : ""
-                        }><li><a>Appointment </a></li></NavLink>
-                        <NavLink to="/Login"className={({ isActive, isPending }) =>
+                        }><li><a><FaAtlassian></FaAtlassian>Appointment </a></li></NavLink>
+                        <NavLink to="/Login" className={({ isActive, isPending }) =>
                             isPending ? "pending" : isActive ? "text-black" : ""
                         }><li><a>
-                        Login</a></li></NavLink>
+                            <FaArrowAltCircleRight></FaArrowAltCircleRight> Login</a></li></NavLink>
                     </ul>
                 </div>
 
                 <div className="navbar-end">
                     {
                         user ?
-                            <button onClick={handleLogOut}
-                                className="btn btn-primary"
+                            <div className="flex items-center text-center">
+                                    <div className="dropdown dropdown-end">
+                                    <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                        <div className="w-10 rounded-full">
+                                            <img src={user.photoURL} />
+                                        </div>
+                                    </label>
+                                    <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52">
+                                        <li>
+                                            <a className="justify-between">
+                                               {user.email}
+                                            </a>
+                                        </li>
+                                        
+                                        <li onClick={handleLogOut} ><a>Logout</a></li>
+                                    </ul>
+                                </div>
+                                <button onClick={handleLogOut}
+                                    className="btn btn-active btn-neutral"
 
-                                type="button"
-                                data-ripple-light="true"
-                            >
-                                <span>Logout</span>
-                            </button>
+                                    type="button"
+                                    data-ripple-light="true"
+                                >
+                                    <span>Logout</span>
+                                </button>
+                            </div>
                             :
                             <NavLink to="/login">
                                 <button
-                                    className="btn btn-primary"
+                                    className="btn btn-warning"
                                     type="button"
                                     data-ripple-light="true"
                                 >

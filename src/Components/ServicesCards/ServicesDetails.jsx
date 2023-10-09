@@ -10,7 +10,7 @@ const ServicesDetails = () => {
     console.log(service);
     return (
         <div>
-            <div className="relative flex mx-auto w-full my-20 flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+            <div className="relative flex mx-auto w-full my-20  flex-row rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
                 <div className="relative m-0 w-3/5 shrink-0 overflow-hidden rounded-xl rounded-r-none bg-white bg-clip-border text-gray-700">
                     <img
                         src={service.img}

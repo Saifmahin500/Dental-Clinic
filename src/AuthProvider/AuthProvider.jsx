@@ -24,7 +24,6 @@ const googleProvider = new GoogleAuthProvider();
 
     useEffect(() => {
         const unSubScribe = onAuthStateChanged(auth, (currentUser) => {
-                console.log("hello");
                 setUser(currentUser)
         })
         return () => {

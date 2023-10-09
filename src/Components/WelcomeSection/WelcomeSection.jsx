@@ -5,7 +5,7 @@ const WelcomeSection = () => {
         <div>
             <div className="hero min-h-screen">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://i.ibb.co/r477ChX/dental-clinic-building-with-background-vector-illustration-268834-891.jpg" className="max-w-xl rounded-lg shadow-2xl" />
+                    <img src="https://i.ibb.co/r477ChX/dental-clinic-building-with-background-vector-illustration-268834-891.jpg" className="lg:max-w-xl rounded-lg shadow-2xl" />
                     <div className="text-center">
                         <h1 className="text-5xl font-bold">Welcome to our Clinic</h1>
                         <p className="py-6 font-medium">

@@ -1,12 +1,16 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Registration = () => {
+    const location = useLocation()
+    const navigate = useNavigate()
 const {createUser} = useContext(AuthContext)
 const [error, setError] = useState("")
     const handleRegistration = e =>{
+
         e.preventDefault();
         const username = e.target.userName.value;
         const photo = e.target.photo.value;
@@ -15,18 +19,19 @@ const [error, setError] = useState("")
         console.log(username,photo, email,password);
 
         if (!/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/.test(password)) {
-            setError("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:")
+           return setError("Minimum eight characters, at least one uppercase letter, one lowercase letter, one number and one special character:")
         }
         else {
-            setError("")
+            setError(" ")
         }
 
         createUser(email,password)
-    .then(result =>{
-      console.log(result);
+    .then(() =>{
+        toast.success('Successfully Registration!')
+        navigate(location?.state ? location.state : "/")
     })
-    .catch(err =>{
-      console.error(err);
+    .catch(() =>{
+        toast.error("already used this account");
     })
     } 
     return (
@@ -36,7 +41,7 @@ const [error, setError] = useState("")
                     <div className="hero-content flex-col ">
                         <div className="text-center">
                             <h1 className="text-5xl font-bold">Registration now!</h1>
-                            <p>{error}</p>
+                            
                         </div>
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                             <div className="card-body">
@@ -67,6 +72,7 @@ const [error, setError] = useState("")
                                         <label className="label">
                                             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                         </label>
+                                        <p>{error}</p>
                                     </div>
                                     <div className="form-control mt-6">
                                         <button className="btn btn-error">Registration</button>

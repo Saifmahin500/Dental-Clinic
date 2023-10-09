@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { FaGoogle } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Login = () => {
     const { googleSignIn ,signIn } = useContext(AuthContext);
+    const location = useLocation()
+    const navigate = useNavigate()
     const handleLogin = e => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -13,11 +16,12 @@ const Login = () => {
 
             if (email,password) {
                 signIn(email,password)
-            .then(result => {
-                result.user
+            .then(()=> {
+                toast.success('Successfully LogIn!')
+                navigate(location?.state ? location.state : "/")
             })
-            .catch(err =>{
-                alert(err.massage);
+            .catch(() =>{
+                toast.error("Password doesn't match");
               })
             }
         
@@ -25,11 +29,12 @@ const Login = () => {
     }
     const handleGoogle = () => {
         googleSignIn()
-            .then(result => {
-                result.user
+            .then(() => {
+                toast.success('Successfully LogIn!')
+                navigate(location?.state ? location.state : "/")
             })
-            .catch(err => {
-                console.error(err);
+            .catch(() => {
+                toast.error("Password doesn't match");
             })
     }
     return (

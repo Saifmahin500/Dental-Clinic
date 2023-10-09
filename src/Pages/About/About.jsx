@@ -8,7 +8,7 @@ const About = () => {
 
             <div className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img src="https://i.ibb.co/w4Bsy7p/experienceddentist.png" className="max-w-xl rounded-lg shadow-2xl" />
+                    <img src="https://i.ibb.co/w4Bsy7p/experienceddentist.png" className="lg:max-w-xl rounded-lg shadow-2xl" />
                     <div className="mx-12">
                         <h1 className="text-5xl font-bold">About Us</h1>
                         <p className="py-6">Welcome to Performance Dental Center! You’ll find high quality dental care and advanced services offered in a relaxed and laid back atmosphere. Our office is modern and equipped with the latest in dental technology to make treatment more comfortable, efficient, and pleasant for our patients.
